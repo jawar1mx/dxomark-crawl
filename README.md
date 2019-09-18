@@ -26,4 +26,4 @@ The results will be saved into output folder.
 ### Keep in mind
 The [DXOMARK](https://www.dxomark.com/) website will be updated all the time.
 If the webpage template is changed, just update the parser rules in the 
-[``crawl.py``](https://github.com/nightmello/dxomark-crawl/blob/master/crawl.py#L25_L31).
+[``crawl.py``](https://github.com/nightmello/dxomark-crawl/blob/master/crawl.py#L27_L33).

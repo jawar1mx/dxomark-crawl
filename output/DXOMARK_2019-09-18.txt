@@ -1,0 +1,31 @@
+	model	overall	photo	selfie	video	p+v	p+s+v
+0	Samsung Galaxy Note 10+ 5G	117	126	99	101	227	326
+1	Huawei P30 Pro	116	125	89	97	222	311
+2	Samsung Galaxy S10 5G	116	124	97	100	224	321
+3	Honor 20 Pro	113	121	-	97	218	-
+4	Huawei Mate 20 Pro	112	120	75	97	217	292
+5	OnePlus 7 Pro	111	118	86	98	216	302
+6	Xiaomi Mi 9	110	115	-	99	214	-
+7	Huawei P20 Pro	109	114	72	98	212	284
+8	Samsung Galaxy S10+	109	114	96	97	211	307
+9	Apple iPhone XS Max	106	110	82	96	206	288
+10	HTC U12+	103	106	-	95	201	-
+11	Samsung Galaxy Note 9	103	107	92	94	201	293
+12	Xiaomi Mi MIX 3	103	108	84	93	201	285
+13	Google Pixel 3	102	103	92	98	201	293
+14	Apple iPhone XR	101	103	-	96	199	-
+
+rank by photo score
+1	126	['Samsung Galaxy Note 10+ 5G']
+2	125	['Huawei P30 Pro']
+3	124	['Samsung Galaxy S10 5G']
+4	121	['Honor 20 Pro']
+5	120	['Huawei Mate 20 Pro']
+6	118	['OnePlus 7 Pro']
+7	115	['Xiaomi Mi 9']
+8	114	['Huawei P20 Pro', 'Samsung Galaxy S10+']
+9	110	['Apple iPhone XS Max']
+10	108	['Xiaomi Mi MIX 3']
+11	107	['Samsung Galaxy Note 9']
+12	106	['HTC U12+']
+13	103	['Google Pixel 3', 'Apple iPhone XR']

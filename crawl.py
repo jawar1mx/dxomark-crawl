@@ -3,9 +3,8 @@ import datetime
 import pandas as pd
 import requests
 from lxml import html
+from tabulate import tabulate
 
-
-# the last update on 09/18/2019
 
 def phone_ranking(top=10):
     url = 'https://www.dxomark.com/category/mobile-reviews/'
@@ -27,9 +26,30 @@ def phone_ranking(top=10):
         photo_score = tree.xpath('//div[@class="chart-container bars photo "]//div/@data-score')[0]
         photo_detail = tree.xpath('//div[@class="chart-container bars photo "]//div/@data-array')[0]
         photo_detail = [int(x) if 'n/a' not in x else '-' for x in photo_detail.split(',')]
+        if len(photo_detail) == 9:
+            photo_autofocus = photo_detail[2]
+            photo_texture = photo_detail[3]
+            photo_noise = photo_detail[4]
+            photo_night = '-'
+        elif len(photo_detail) == 10:
+            photo_autofocus = photo_detail[2]
+            photo_texture = photo_detail[3]
+            photo_noise = photo_detail[4]
+            photo_night = photo_detail[6]
+        else:
+            photo_autofocus = '-'
+            photo_texture = '-'
+            photo_noise = '-'
+            photo_night = '-'
         video_score = tree.xpath('//div[@class="chart-container bars video "]//div/@data-score')[0]
         video_detail = tree.xpath('//div[@class="chart-container bars video "]//div/@data-array')[0]
         video_detail = [int(x) if 'n/a' not in x else '-' for x in video_detail.split(',')]
+        if len(video_detail) == 7:
+            video_noise = video_detail[4]
+            video_stable = video_detail[6]
+        else:
+            video_noise = '-'
+            video_stable = '-'
         front_link = tree.xpath('//div[@class="protocolsNav"]//li[@class="selfie"]//@href')
         if len(front_link) > 0:
             front_link = tree.xpath('//div[@class="protocolsNav"]//li[@class="selfie"]//@href')[0]
@@ -44,12 +64,8 @@ def phone_ranking(top=10):
             record[int(photo_score)].append(phone)
         else:
             record[int(photo_score)] = [phone]
-        if len(selfie) > 1:
-            total = int(photo_score) + int(selfie) + int(video_score)
-        else:
-            total = '-'
-        photo_video = int(photo_score) + int(video_score)
-        detail = [phone, score, photo_score, selfie, video_score, photo_video, total]
+        detail = [phone, score, photo_score, photo_night, photo_autofocus, photo_texture, photo_noise,
+                  selfie, video_score, video_stable, video_noise]
         results.append(detail)
 
     date = datetime.date.today()
@@ -59,10 +75,13 @@ def phone_ranking(top=10):
 
 
 def save_to_file(path, results, record):
-    display = pd.DataFrame(results, columns=['model', 'overall', 'photo', 'selfie', 'video', 'p+v', 'p+s+v'])
-    print(display)
-    display.to_csv(path, sep='\t')
+    display = pd.DataFrame(results, columns=['model', 'overall', 'photo', 'night', 'focus', 'texture', 'noise',
+                                             'selfie', 'video', 'stable', 'noise'])
+    out_format = tabulate(display, tablefmt='pipe', headers='keys', numalign='center', stralign='center')
+    print(out_format)
+    print(out_format, file=open('output/README.md', 'w'))
 
+    display.to_csv(path, sep='|')
     display.index += 1
     fos = open(path, 'a+', encoding='utf-8')
     res = '\nrank by photo score'

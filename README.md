@@ -20,10 +20,11 @@ Now you can start using it:
 python crawl.py
 ```
 
-The results will be saved into output folder.
+The results will be saved into output folder and 
+[output/README.md](https://github.com/nightmello/dxomark-crawl/tree/master/output/README.md).
 
 
 ### Keep in mind
 The [DXOMARK](https://www.dxomark.com/) website will be updated all the time.
 If the webpage template is changed, just update the parser rules in the 
-[``crawl.py``](https://github.com/nightmello/dxomark-crawl/blob/master/crawl.py#L27_L33).
+[``crawl.py``](https://github.com/nightmello/dxomark-crawl/blob/master/crawl.py#L26_L53).

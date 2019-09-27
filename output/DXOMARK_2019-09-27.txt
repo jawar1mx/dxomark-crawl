@@ -1,0 +1,32 @@
+|model|overall|photo|night|focus|texture|noise|selfie|video|stable|noise
+0|Huawei Mate 30 Pro|121|131|61|100|79|81|93|100|94|77
+1|Samsung Galaxy Note 10+ 5G|117|126|59|99|72|77|99|101|93|79
+2|Huawei P30 Pro|116|125|59|100|72|78|89|97|94|77
+3|Samsung Galaxy S10 5G|116|124|59|99|71|75|97|100|93|79
+4|Honor 20 Pro|113|121|53|99|68|78|-|97|92|71
+5|Huawei Mate 20 Pro|112|120|53|99|74|78|75|97|92|78
+6|OnePlus 7 Pro|111|118|-|100|71|76|86|98|91|76
+7|Xiaomi Mi 9|110|115|48|96|69|73|-|99|92|78
+8|Huawei P20 Pro|109|114|-|98|72|79|72|98|94|83
+9|Samsung Galaxy S10+|109|114|-|98|70|75|96|97|94|76
+10|Apple iPhone XS Max|106|110|37|100|74|68|82|96|94|75
+11|HTC U12+|103|106|-|100|71|72|-|95|92|80
+12|Samsung Galaxy Note 9|103|107|-|96|68|76|92|94|91|72
+13|Xiaomi Mi MIX 3|103|108|-|99|71|73|84|93|90|77
+14|Google Pixel 3|102|103|49|98|71|64|92|98|94|83
+
+rank by photo score
+1	131	['Huawei Mate 30 Pro']
+2	126	['Samsung Galaxy Note 10+ 5G']
+3	125	['Huawei P30 Pro']
+4	124	['Samsung Galaxy S10 5G']
+5	121	['Honor 20 Pro']
+6	120	['Huawei Mate 20 Pro']
+7	118	['OnePlus 7 Pro']
+8	115	['Xiaomi Mi 9']
+9	114	['Huawei P20 Pro', 'Samsung Galaxy S10+']
+10	110	['Apple iPhone XS Max']
+11	108	['Xiaomi Mi MIX 3']
+12	107	['Samsung Galaxy Note 9']
+13	106	['HTC U12+']
+14	103	['Google Pixel 3']
